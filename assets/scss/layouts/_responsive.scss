@@ -1,0 +1,87 @@
+.main-container.is-narrow {
+    .cloud-big {
+        bottom: -235px;
+    }
+    .mountain {
+        background-position: center 115%;
+    }
+    .dots {
+        @include transform(translateY(15%));
+    }
+    .model {
+        background-size: auto 90% !important;
+    }
+}
+
+@include screen-height($md-devices) {
+    .page-loader-container {
+        .page-loader {
+            width: 175px !important;
+            height: 175px !important;
+        }
+        .logo {
+            width: 100px !important;
+            height: 100px !important;
+        }
+    }
+    .brand-container {
+        .brand {
+            width: 75px !important;
+        }
+    }
+    .nav-container {
+        .nav-wrapper li {
+            a {
+                font-size: 1.3rem !important;
+            }
+            &:last-child {
+                a {
+                    padding: 0.2rem 2rem !important;
+                }
+            }
+        }
+    }
+    .intro-text-container {
+        .title-jap {
+            font-size: 2.4rem !important;
+        }
+        .title-firstname {
+            font-size: 8rem !important;
+            line-height: 8rem !important;
+        }
+        .title-surname {
+            font-size: 6rem !important;
+            line-height: 6rem !important;
+        }
+        .title-dream {
+            font-size: 1.1rem !important
+        }
+    }
+    .svg-mouse-scrolling-icon {
+        .mouse {
+            max-width: 2.2rem;
+        }
+    }
+    .cloud-left, .cloud-right {
+        bottom: 0 !important;
+    }
+}
+
+@include screen($xx-devices) {
+
+}
+
+@include screen($xl-devices) {
+    .cloud-left, .cloud-right {
+        bottom: -25px !important;
+    }
+    .greetings {
+        bottom: 100px !important;
+    }
+}
+
+@include screen($lg-devices) {
+    .mountain {
+       background-size: 125% auto !important;
+    }
+}

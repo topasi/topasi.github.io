@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+	//cursor: none;
+	&::before, &::after {
+		box-sizing: border-box;
+	}
+}
+
+ul { 
+	list-style-type: none; 
+	overflow: hidden; 
+}
+
+a { 
+	display: block; 
+	background: transparent; 
+	text-decoration: none; 
+	outline: none !important;
+	cursor: pointer;
+	&:hover {
+		text-decoration:none;
+	}
+}
+
+section {
+	display: block;
+}

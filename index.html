@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <!-- title -->
+    <title>Rafael Topasi | My Portfolio</title>
+    <!-- styles -->    
+	<link type="text/css" href="./assets/css/reset.css" rel="stylesheet">
+    <link type="text/css" href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="./assets/css/nanoscroller.css" rel="stylesheet" >
+    <link type="text/css" href="./assets/css/hover-min.css" rel="stylesheet">   
+    <link type="text/css" href="./assets/css/jquery.fancybox.min.css" rel="stylesheet">
+    <link type="text/css" href="./assets/css/main.min.css" rel="stylesheet">
+    <!-- fonts -->
+	<link type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link type="text/css" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+    <!-- icon -->
+    <link type="image/x-icon" href="./assets/img/min/favicon.ico" rel="icon">
+    <!-- scripts -->
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        var beforeTime = new Date().getTime();
+    </script>
+</head>
+<body>     
+    <!--
+    <div class="cursor"></div>
+    <div class="cursor"></div>
+    -->
+    <div id="modal-dialog-box" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-label="hidden">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn custom-btn-solid" data-dismiss="modal">Close</button>
+                </div>
+            </div> <!-- end of modal-content -->
+        </div> <!-- end of modal-dialog -->
+    </div> <!-- end of modal -->
+    <div class="page-loader-container">
+        <div id="page-loader" class="page-loader"></div>
+        <div class="logo"></div>
+        <div class="counter">
+            <div class="loader">
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__bar"></div>
+                <div class="loader__ball"></div>
+            </div>
+        </div>
+    </div>
+    <div class="nano">
+        <div class="main-container nano-content">         
+            <header id="header" class="header-container animate-header">
+                <button id="hamburger" class="hamburger-container" data-status="open">
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                    <span class="menu-bar"></span>
+                </button>
+                <div class="container">
+                    <div class="brand-container">
+                        <a class="brand hvr-push" href="#" onclick="scrollToSection('#home')"><img src="./assets/img/min/brand.png" alt="Rafael Topasi"></a>
+                        <div class="owner-container">
+                            <p class="name">Rafael Topasi</p>
+                            <p class="position">Front-end Web Developer</p>
+                        </div>
+                    </div>
+                    <nav class="nav-container">
+                        <ul class="nav-wrapper">
+                            <li><a class="hvr-underline-from-center" href="#" onclick="scrollToSection('#about')">About</a></li>
+                            <li><a class="hvr-underline-from-center" href="#" onclick="scrollToSection('#skills')">Skills</a></li>
+                            <li><a class="hvr-underline-from-center" href="#" onclick="scrollToSection('#portfolio')">Portfolio</a></li>
+                            <li><a class="hvr-underline-from-center" href="#" onclick="scrollToSection('#contact')">Contact</a></li>
+                        </ul>
+                    </nav> <!-- end of nav-container -->
+                    <div class="clearfix"></div>
+                </div> <!-- end of container -->
+            </header> <!-- end of header-container -->
+            <div class="bg-sideable-toggle"></div>
+            <section id="home" class="home-container">
+                <div class="container">  
+                    <div class="intro-text-container animate-intro-text">
+                        <div id="intro-text" class="intro-text-wrapper">
+                            <h3 class="title-jap">こんにちは私は</h3>
+                            <h1 class="title-firstname">Rafael</h1>
+                            <h2 class="title-surname">Topasi</h2>
+                            <h4 class="title-dream">
+                                <div id="typed-strings">
+                                    <p>Web & Graphics Designer</p>
+                                    <p>Front-end Web Developer</p>
+                                </div>
+                                <span id="typed"></span>
+                            </h4>
+                        </div>
+                    </div>
+                </div> <!-- end of container -->
+                <a id="svg-mouse-scrolling-icon" class="svg-mouse-scrolling-icon animate-svg-mouse" href="#" onclick="scrollToSection('#about')">
+                    <svg class="mouse hvr-push" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 130" preserveAspectRatio="xMidYMid meet">
+                        <g fill="none" fill-rule="evenodd">
+                            <rect width="70" height="118" x="1.5" y="1.5" stroke="#FFF" stroke-width="3" rx="36"/>
+                            <circle class="scroll" cx="36.5" cy="31.5" r="4.5" fill="#FFF"/>
+                        </g>
+                    </svg>
+                </a> <!-- end of svg-mouse-scrolling-icon -->
+                <div class="cloud-left"></div>
+                <div class="cloud-right"></div>
+                <div class="cloud-big"></div>
+                <div class="mountain"></div>
+                <div class="greetings animate-greetings"></div>
+                <div id="particles-js" class="particles-js"></div>
+            </section> <!-- end of home-container -->
+            <section id="about" class="about-container">    
+                <div class="intro-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="title-container">
+                                    <h1 class="text">About</h1>
+                                    <span class="bar from-right"></span>
+                                </div>
+                                <div class="intro-wrapper">
+                                    <img id="avatar" class="avatar" src="./assets/img/min/avatar.jpg" alt="">
+                                    <h1 id="greetings" class="title">Hi, everyone! nice to meet you.</h1>
+                                    <p id="objective" class="desc">I'm looking for a job where I can acquire exposure and experience in front-end web development and improve my skills at the same time. I'm a career shifter and my top priority is learning, I specialize in web and graphic designing, I can create mobile first web application using different web technologies available.</p>
+                                </div> <!-- intro-wrapper -->
+                                <div class="about-start-pinned"></div>
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of container -->
+                    <img class="dots" src="./assets/img/min/dots.png" alt="">
+                </div> <!-- end of intro-container -->
+                <div class="timeline-container">
+                    <div class="container">
+                        <div class="timeline-wrapper">
+                            <div class="row">
+                                <div class="col col-md-12 col-lg-4 order-lg-2">                                 
+                                    <div class="iphone-container">
+                                        <img class="iphone" src="./assets/img/min/iphone-header.png">
+                                        <div class="model-container">
+                                            <img class="iphone" src="./assets/img/min/iphone-body.png">
+                                            <span class="model"></span>
+                                        </div>
+                                        <img class="iphone" src="./assets/img/min/iphone-footer.png">
+                                    </div>
+                                </div> <!-- end of col -->
+                                <div class="col col-md-6 col-lg-4 order-lg-1">
+                                    <div class="timeline left">
+                                        <div class="title">Where I studied?</div>
+                                        <div class="desc">
+                                            <ul>
+                                                <li data-year="2014">I Graduated from Quezon City Polytechnic University with a Bachelor's Degree of Information Technology Major in Computer Science.</li>
+                                                <li data-year="2012">I attended seminars on Software Freedom Day at U.P Diliman, Advanced Networking and Storage Technology at Korea Philippines I.T Training Center.</li>
+                                                <li data-year="2009">I finished my high school at Deparo High School - Llano Annex Caloocan City.</li>
+                                            </ul>
+                                        </div>
+                                    </div> <!-- end of timeline-wrapper -->
+                                </div> <!-- end of col -->
+                                <div class="col col-md-6 col-lg-4 order-lg-3">
+                                    <div class="timeline right">
+                                        <div class="title">What I do before?</div>
+                                        <div class="desc">
+                                            <ul>
+                                                <li class="event" data-year="2016">Gurkka.com has been established and I started maintaining and updating it's back-end and that's my responsiblity.</li>
+                                                <li class="event" data-year="2015">I started working as a graphic designer at Global Noble International Corp. I make any types of graphics and I design Gurkka.com their first e-commerce website.</li>
+                                                <li class="event" data-year="2013">I completed my On The Job Training at Task Security Academy, Inc.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div> <!-- end of col -->                           
+                            </div> <!-- end of row -->
+                        </div> <!-- end of timeline-wrapper -->
+                        <div class="clearfix"></div>
+                    </div> <!-- end of container -->
+                </div> <!-- end of timeline-container -->
+            </section> <!-- end of about-container -->
+            <section id="skills" class="skills-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="title-container">
+                                <h1 class="text">Skills</h1>
+                                <span class="bar from-left"></span>
+                            </div>
+                        </div> <!-- end of col -->
+                    </div> <!-- end of row -->
+                    <div class="row">
+                        <div class="col col-lg-6">
+                            <div id="macbook-web" class="macbook-container web from-left">
+                                <div id="chart-web" class="chart-container">
+                                    <div class="chart">
+                                        <div class="title">HTML5</div>
+                                        <div id="chart-html" class="chart-progress" data-percent="85"></div>
+                                    </div>
+                                    <div class="chart">
+                                        <div class="title">CSS3</div>
+                                        <div id="chart-css" class="chart-progress" data-percent="95"></div>
+                                    </div>	
+                                    <div class="chart">
+                                        <div class="title">SASS</div>
+                                        <div id="chart-sass" class="chart-progress" data-percent="80"></div>
+                                    </div>			
+                                    <div class="chart">
+                                        <div class="title">JS</div>
+                                        <div id="chart-js" class="chart-progress" data-percent="75"></div>
+                                    </div>	
+                                    <div class="chart">
+                                        <div class="title">jQuery</div>
+                                        <div id="chart-jquery" class="chart-progress" data-percent="85"></div>
+                                    </div>	
+                                    <div class="chart">
+                                        <div class="title">Gulp</div>
+                                        <div id="chart-gulp" class="chart-progress" data-percent="70"></div>
+                                    </div>			
+                                    <div class="chart">
+                                        <div class="title">Git</div>
+                                        <div id="chart-git" class="chart-progress" data-percent="60"></div>
+                                    </div>					
+                                    <div class="chart">
+                                        <div class="title">NPM</div>
+                                        <div id="chart-node" class="chart-progress" data-percent="50"></div>
+                                    </div>								
+                                </div>
+                                <img class="macbook" src="./assets/img/min/macbook-web.png" alt="">
+                            </div>
+                        </div> <!-- end of col -->
+                        <div class="col col-lg-6">
+                            <div id="proficiency-web" class="proficiency-container web from-right">
+                                <h1 class="title">Front-end Development</h1>
+                                <p>My main area of expertise is front-end web development or the client-side of the web. I can create UI that can work on wide ranges of devices and I'm also familiar with different back-end languanges like PHP, AJAX, JSON, Angular, Node/NPM and MySQL. I have also basic understanding of MVC frameworks like Laravel and currently in learning process.</p>
+                                <a class="btn custom-btn-solid" href="#" onclick="scrollToSection('#portfolio')">Check out projects that I created</a>
+                            </div>
+                        </div> <!-- end of col -->       
+                        <div class="col col-lg-12">
+                            <div class="separator"></div>
+                        </div> <!-- end of col -->                     
+                    </div> <!-- end of row -->
+                    <div class="pinned-proficiency-graphics">
+                        <div class="row">
+                            <div class="col col-lg-6">
+                                <div id="macbook-graphics" class="macbook-container graphics from-left">
+                                    <div id="chart-graphics" class="chart-container">
+                                        <div class="chart">
+                                            <div class="title">Photoshop</div>
+                                            <div id="chart-ps" class="chart-progress" data-percent="95"></div>
+                                        </div>				
+                                        <div class="chart">
+                                            <div class="title">InDesign</div>
+                                            <div id="chart-id" class="chart-progress" data-percent="75"></div>
+                                        </div>	
+                                        <div class="chart">
+                                            <div class="title">Bridge</div>
+                                            <div id="chart-br" class="chart-progress" data-percent="90"></div>
+                                        </div>			
+                                        <div class="chart">
+                                            <div class="title">Encore</div>
+                                            <div id="chart-en" class="chart-progress" data-percent="95"></div>
+                                        </div>	
+                                        <div class="chart">
+                                            <div class="title">Premiere</div>
+                                            <div id="chart-pr" class="chart-progress" data-percent="80"></div>
+                                        </div>
+                                        <div class="chart">
+                                            <div class="title">SketchUp</div>
+                                            <div id="chart-gs" class="chart-progress" data-percent="75"></div>
+                                        </div>
+                                    </div>
+                                    <img class="macbook" src="./assets/img/min/macbook-graphic.png" alt="">
+                                </div>
+                            </div> <!-- end of col -->
+                            <div class="col col-lg-6">
+                                <div id="proficiency-graphics" class="proficiency-container graphics from-right">
+                                    <h1 class="title">Graphic Designing</h1>
+                                    <p>With my experience in graphic designing I can create any types of graphics including social media posts and video graphics. I'm using Adobe Creative Suite or Creative Cloud such as Photoshop, Bridge, Indesign, Audition, Encore and Premiere. I can also use Google SketchUp for making event set-ups that requires 3D perspectives.</p>
+                                    <a class="btn custom-btn-solid" href="#grid" onclick="scrollToSection('#portfolio')">Check out projects that I created</a>
+                                </div>
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of ppinned-roficiency-graphics -->
+                </div> <!-- end of container -->
+            </section> <!-- end of skills-container -->
+            <section id="portfolio" class="portfolio-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-lg-12">
+                            <div class="title-container">
+                                <h1 class="text">Portfolio</h1>
+                                <span class="bar from-right"></span>
+                            </div>
+                        </div> <!-- end of col -->
+                        <div class="col col-lg-12">
+                            <div class="title-wrapper">
+                                <h1 id="portfolio-title" class="title">Work Projects</h1>
+                                <p id="portfolio-subtitle" class="subtitle">Here are a few web and graphic design projects that I made...</p>
+                            </div>                                 
+                        </div> <!-- end of col -->
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->  
+                <div class="web-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-4">
+                                <div id="gurkka" class="web-wrapper from-left">
+                                    <div class="card">
+                                        <a class="card-img-wrapper" href="./assets/img/min/web portfolio/viewing/gurkka.jpg" data-fancybox="web-item">
+                                            <img class="card-img-top" src="./assets/img/min/web portfolio/display/gurkka.jpg" alt="">
+                                        </a>
+                                        <div class="card-body">
+                                            <h3 class="card-title">Gurkka.com</h3>
+                                            <p class="card-text">This is an e-commerce site for wines and spirits where you can get freebies, promo bundles and discounted items.</p>
+                                            <a class="btn custom-btn-solid" href="https://www.gurkka.com" target="_blank">View Website</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end of col -->
+                            <div class="col col-lg-4">
+                                <div id="greg-timbol" class="web-wrapper from-left">
+                                    <div class="card">
+                                        <a class="card-img-wrapper" href="./assets/img/min/web portfolio/viewing/greg-timbol-interiors.jpg" data-fancybox="web-item">
+                                            <img class="card-img-top" src="./assets/img/min/web portfolio/display/greg-timbol-interiors.jpg" alt="">
+                                        </a>
+                                        <div class="card-body">
+                                            <h3 class="card-title">Greg Timbol Interiors</h3>
+                                            <p class="card-text">This is an e-commerce site for interior design and furniture that I and my group developed for our thesis subject.</p>
+                                            <a class="btn custom-btn-solid" href="#">View Website</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end of col -->
+                            <div class="col col-lg-4">
+                                <div id="ultra-upload" class="web-wrapper from-left">
+                                    <div class="card">
+                                        <a class="card-img-wrapper" href="./assets/img/min/web portfolio/viewing/ultraupload.jpg" data-fancybox="web-item">
+                                            <img class="card-img-top" src="./assets/img/min/web portfolio/display/ultraupload.jpg" alt="">
+                                        </a>
+                                        <div class="card-body">
+                                            <h3 class="card-title">Ultra Upload</h3>
+                                            <p class="card-text">This is a cloud storage site where  I and my group developed for our software engineering subject.</p>
+                                            <a class="btn custom-btn-solid" href="#">View Website</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of container -->
+                </div> <!-- end of web-container -->
+                <div id="graphics" class="graphics-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="filter-button-container">
+                                    <div class="input-group input-group-lg">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text" for="filter-options">Filter</label>
+                                        </div>
+                                        <select class="custom-select" id="filter-options">
+                                            <option value="grid-item" selected>All</option>
+                                            <option value="pull-up-banner">Banner</option>
+                                            <option value="poster">Posters</option>
+                                            <option value="fb-post">Social Media</option>
+                                            <option value="display-bar">Display Bar</option>
+                                            <option value="gondola-bar">Gondola</option>
+                                            <option value="header">Headers</option>
+                                            <option value="invitation-card">Invitation</option>
+                                            <option value="magazine">Magazine</option>
+                                            <option value="menu">Menus</option>
+                                            <option value="table-talker">Table Talker</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div id="grid" class="grid-container img-unloaded">
+                                    <div class="grid-col-sizer"></div>
+                                    <div class="grid-gutter-sizer"></div>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/poster-teeling-experience-2.0.jpg"><img src="./assets/img/min/graphics portfolio/display/poster-teeling-experience-2.0.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/poster-guillys-night-club.jpg"><img src="./assets/img/min/graphics portfolio/display/poster-guillys-night-club.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/poster-teeling-whiskey-revival-14-yrs.jpg"><img src="./assets/img/min/graphics portfolio/display/poster-teeling-whiskey-revival-14-yrs.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/poster-teeling-small-batch.jpg"><img src="./assets/img/min/graphics portfolio/display/poster-teeling-small-batch.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/poster-pino-ice-cup.jpg"><img src="./assets/img/min/graphics portfolio/display/poster-pino-ice-cup.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/poster-hotel-kamana.jpg"><img src="./assets/img/min/graphics portfolio/display/poster-hotel-kamana.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/poster-blowfish-&-atilius.jpg"><img src="./assets/img/min/graphics portfolio/display/poster-blowfish-&-atilius.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/poster-milkita-5+1-promo-with-san-roque-supermarket.jpg"><img src="./assets/img/min/graphics portfolio/display/poster-milkita-5+1-promo-with-san-roque-supermarket.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/display-bar-label-terranoble.jpg"><img src="./assets/img/min/graphics portfolio/display/display-bar-label-terranoble.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-gurkka-&-teeling-fathers-day.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-gurkka-&-teeling-fathers-day.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-gurkka-&-monin-syrup.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-gurkka-&-monin-syrup.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-gurkka-5th-anniversary.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-gurkka-5th-anniversary.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-gurkka-chinese-new-year-2019-grace-vineyard.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-gurkka-chinese-new-year-2019-grace-vineyard.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-gurkka-graduation-2019.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-gurkka-graduation-2019.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-gurkka-membership-platinum-medal.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-gurkka-membership-platinum-medal.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-gurkka-national-pinot-noir.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-gurkka-national-pinot-noir.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-gurkka-the-irish-tipple-cocktail.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-gurkka-the-irish-tipple-cocktail.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-gurkka-valentines-day-2017.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-gurkka-valentines-day-2017.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-milkita-liza-21st-birthday.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-milkita-liza-21st-birthday.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-milkita-slime-cup.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-milkita-slime-cup.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/fb-post-wine-tasting-event.jpg"><img src="./assets/img/min/graphics portfolio/display/fb-post-wine-tasting-event.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/gondola-bar-label-dubliner.jpg"><img src="./assets/img/min/graphics portfolio/display/gondola-bar-label-dubliner.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/gondola-bar-label-mollys.jpg"><img src="./assets/img/min/graphics portfolio/display/gondola-bar-label-mollys.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/gondola-bar-label-westo-cork,-egans,-pogues-&-celtic-honey.jpg"><img src="./assets/img/min/graphics portfolio/display/gondola-bar-label-westo-cork,-egans,-pogues-&-celtic-honey.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/header-cola-candy.jpg"><img src="./assets/img/min/graphics portfolio/display/header-cola-candy.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/header-milkita-5+1-promo-with-san-roque-supermarket.jpg"><img src="./assets/img/min/graphics portfolio/display/header-milkita-5+1-promo-with-san-roque-supermarket.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/header-milkita-assorted-lollipop-bag-15s.jpg"><img src="./assets/img/min/graphics portfolio/display/header-milkita-assorted-lollipop-bag-15s.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/header-pino-ice-cup-30-percent-off.jpg"><img src="./assets/img/min/graphics portfolio/display/header-pino-ice-cup-30-percent-off.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/invitation-card-davidoff.jpg"><img src="./assets/img/min/graphics portfolio/display/invitation-card-davidoff.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/invitation-card-hine-cognac.jpg"><img src="./assets/img/min/graphics portfolio/display/invitation-card-hine-cognac.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/magazine-milkita,-cola-&-pino-for-boardwalk.jpg"><img src="./assets/img/min/graphics portfolio/display/magazine-milkita,-cola-&-pino-for-boardwalk.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/menu-(front)-handlebar-manila.jpg"><img src="./assets/img/min/graphics portfolio/display/menu-(front)-handlebar-manila.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/menu-hong-teng.jpg"><img src="./assets/img/min/graphics portfolio/display/menu-hong-teng.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/menu-polo-bistro.jpg"><img src="./assets/img/min/graphics portfolio/display/menu-polo-bistro.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/menu-taggo-bar.jpg"><img src="./assets/img/min/graphics portfolio/display/menu-taggo-bar.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/menu-the-aura-club.jpg"><img src="./assets/img/min/graphics portfolio/display/menu-the-aura-club.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/pull-up-banner-cava-la-crusset.jpg"><img src="./assets/img/min/graphics portfolio/display/pull-up-banner-cava-la-crusset.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/pull-up-banner-gurkka.jpg"><img src="./assets/img/min/graphics portfolio/display/pull-up-banner-gurkka.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/pull-up-banner-hine-cognac.jpg"><img src="./assets/img/min/graphics portfolio/display/pull-up-banner-hine-cognac.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/pull-up-banner-milkita-5+1-promo-with-puregold.jpg"><img src="./assets/img/min/graphics portfolio/display/pull-up-banner-milkita-5+1-promo-with-puregold.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/pull-up-banner-pino-ice-cup.jpg"><img src="./assets/img/min/graphics portfolio/display/pull-up-banner-pino-ice-cup.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/pull-up-banner-saint-patricks-day-2017.jpg"><img src="./assets/img/min/graphics portfolio/display/pull-up-banner-saint-patricks-day-2017.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/pull-up-banner-slabs-diner-&-steakhouse.jpg"><img src="./assets/img/min/graphics portfolio/display/pull-up-banner-slabs-diner-&-steakhouse.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/pull-up-banner-teeling-whiskey-single-malt.jpg"><img src="./assets/img/min/graphics portfolio/display/pull-up-banner-teeling-whiskey-single-malt.jpg" alt=""></a>
+                                    <a class="grid-item" data-fancybox="grid-item" href="./assets/img/min/graphics portfolio/viewing/table-talker-xxx-tequila.jpg"><img src="./assets/img/min/graphics portfolio/display/table-talker-xxx-tequila.jpg" alt=""></a>
+                                </div> <!-- end of grid-container -->
+                                <a id="view-more" class="btn btn-lg custom-btn-solid" href="">View More</a>         
+                            </div> <!-- end of grid-container -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of container -->
+                </div> <!-- end of graphics-container -->
+                <div id="testimonals" class="testimonals-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-12">
+                                <div class="title-wrapper">
+                                    <h1 id="testimonals-title" class="title">Testimonals</h1>
+                                    <p id="testimonals-subtitle" class="subtitle">What my employer tells about working with me...</p>
+                                </div>                                 
+                            </div> <!-- end of col -->
+                            <div class="col col-lg-12">
+                                <div class="testimonals-wrapper">
+                                    <div id="quote-icon" class="quote-icon-container">
+                                        <i class="fa fa-quote-right"></i>
+                                    </div>
+                                    <div id="message" class="message-container">
+                                        <p>This guy is awesome, he's giving his best as much as posible in every task that I give to him. What I love to this guy is that, he's always looking for solutions rather than saying I don't know how to do that - kind of thing and that's why I'm giving him a big thumbs up for working with us. I hope he will continue serving to the best of his ability just like what he was working with us and that's all I have to say. Thanks you very much Mr. Rafael.</p>
+                                    </div>
+                                    <div id="messenger" class="messenger-container">
+                                        <img class="boss-img" src="./assets/img/min/boss.png" alt="">
+                                        <p class="boss-name">Ariel Broncano</p>
+                                        <p class="job-position">Senior Marketing Officer</p>
+                                    </div>
+                                </div> <!-- end of testimonals-wrapper -->
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of container -->
+                    <div class="bg-testimonals"></div>
+                </div> <!-- end of testimonals-container-->
+            </section> <!-- end of portfolio-container -->
+            <section id="contact" class="contact-container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-lg-12">
+                            <div class="title-container">
+                                <h1 class="text">Contact</h1>
+                                <span class="bar from-left"></span>
+                            </div>
+                        </div> <!-- end of col -->
+                        <div class="col col-lg-12">
+                            <div class="contact-wrapper">
+                                <h1 id="contact-title" class="title">Get in touch and say hello!</h1>
+                                <form id="contact-form" class="contact-form" action="https://formspree.io/rapzki03@gmail.com" method="POST">
+                                    <div class="form-group">
+                                        <div class="textbox-wrapper">
+                                            <input type="text" id="txt-name" class="form-control textbox" name="name" placeholder="Name:" minlength="2">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="textbox-wrapper">
+                                            <input type="email" id="txt-email" class="form-control textbox" name="email" placeholder="Email:">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="textbox-wrapper">
+                                            <textarea id="txtarea-msg" class="form-control textarea" name="message" cols="30" rows="4" placeholder="Message:" minlength="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" id="btn-submit" class="btn btn-lg custom-btn-solid float-right">Send</button>
+                                </form>
+                            </div> <!-- end of contact-wrapper -->
+                        </div> <!-- end of col -->
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </section> <!-- end of contact-container -->
+            <footer id="footer" class="footer-container">   
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-lg-12">
+                            <a class="back-to-top" href="#" onclick="scrollToSection('#home')"><i class="fas fa-angle-double-up"></i></a>
+                            <ul class="social-media-wrapper">
+                                <li><a class="hvr-radial-out" href="https://facebook.com/rapzki03" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a class="hvr-radial-out" href="https://linkedin.com/in/rafael-topasi" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a class="hvr-radial-out" href="mailto:rapzki03@gmail.com?Subject=Hello%20Dear" target="_top"><i class="fas fa-paper-plane"></i></a></li>
+                                <li><a class="hvr-radial-out" href="tel:+639396068175" target="_top"><i class="fas fa-phone"></i></a></li>
+                            </ul>
+                            <p class="copyright">
+                                Handcrafted by &copy; Rafael Topasi
+                                <small>2019・無断複写・転載を禁じます</small>
+                            </p>
+                        </div> <!-- end of col -->
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </footer> <!-- end of footer-container -->
+        </div> <!-- end of main-container -->
+    </div> <!-- end of nano -->
+    <!-- scripts -->
+    <script type="text/javascript" src="./assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.nanoscroller.js"></script>    
+    <script type="text/javascript" src="./assets/js/typed.min.js"></script>
+    <script type="text/javascript" src="./assets/js/particles.min.js"></script>
+    <script type="text/javascript" src="./assets/js/app.js"></script>
+    <script type="text/javascript" src="./assets/js/tilt.jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="./assets/js/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="./assets/js/TweenMax.min.js"></script>
+    <script type="text/javascript" src="./assets/js/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="./assets/js/animation.gsap.min.js"></script>
+    <script type="text/javascript" src="./assets/js/debug.addIndicators.min.js"></script>
+    <script type="text/javascript" src="./assets/js/animatescroll.min.js"></script>
+    <script type="text/javascript" src="./assets/js/progressbar.min.js"></script>
+    <script type="text/javascript" src="./assets/js/functions.js"></script>
+    <script type="text/javascript" src="./assets/js/main.js"></script>  
+    <script type="text/javascript">
+    /*
+    var getPath = ['page'];
+
+    var infScroll = new InfiniteScroll( grid, {
+        path: function() {
+            return getPath[ this.loadCount ] + '.html';
+        },
+        append: '.grid__item',
+        outlayer: msnry,
+        status: '.page-load-status',
+        elementScroll: '.main-container',
+        history: false,
+        historyTitle: false
+    });
+
+        $(document).mousemove(function(e) {
+            $(".cursor").eq(0).css({
+                left: e.clientX,
+                top: e.clientY
+            });
+            setTimeout(function() {
+                $(".cursor").eq(1).css({
+                    left: e.clientX,
+                    top: e.clientY
+                });
+                }, 150);
+            })
+    */
+    </script>   
+</body>
+</html>

@@ -1,0 +1,147 @@
+@import "base/_variables.scss";
+@import "base/_mixins.scss";
+@import "base/_base.scss";
+@import "base/_normalize.scss";
+@import "module/_components.scss";
+@import "module/_controls.scss";
+@import "layouts/_content.scss";
+@import "layouts/_responsive.scss";
+
+
+.slider-text-revealed {
+    position: relative;
+    display: block;
+    margin: 0;
+    line-height: 1;
+    @include transform(translateY(10rem));
+    z-index: 1;
+}
+
+@for $i from 1 through 20 {
+    .animation-delay-#{$i} {
+        @include animation-delay($i * 0.15s);
+    }
+}
+
+.animate {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.animate-play {
+    @include animation-play-state(running !important);
+}
+
+.animate-tracking-in-contract {
+    @include animation(tracking-in-contract, 0.7s, cubic-bezier(0.215, 0.610, 0.355, 1.000));
+    @include animation-fill-mode(forwards);
+    @include keyframes(tracking-in-contract) {
+        0% {
+            letter-spacing: 1em;
+            opacity: 0;
+        }
+        40% {
+            opacity: 0.6;
+        }
+        100% {
+            letter-spacing: normal;
+            opacity: 1;
+        }
+    }  
+}
+
+.animate-slide-in-right {
+    @include animation(slide-in-right, 0.5s, cubic-bezier(0.250, 0.460, 0.450, 0.940));
+    @include animation-fill-mode(forwards);
+    @include keyframes(slide-in-right) {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            @include transform(translateX(0));
+            opacity: 1;
+        }
+    }  
+}
+
+.animate-slide-in-left {
+    @include animation(slide-in-left, 0.5s, cubic-bezier(0.250, 0.460, 0.450, 0.940));
+    @include animation-fill-mode(forwards);
+    @include keyframes(slide-in-left) {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            @include transform(translateX(0));
+            opacity: 1;
+        }
+    }  
+}
+
+.animate-slide-in-bottom {
+    @include animation(slide-in-bottom, 0.5s, cubic-bezier(0.250, 0.460, 0.450, 0.940));
+    @include animation-fill-mode(forwards);
+    @include keyframes(slide-in-bottom) {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            @include transform(translateY(0));
+            opacity: 1;
+        }
+    }  
+}
+
+.animate-vibrate {
+    @include animation(vibrate, 0.3s, linear, 20);
+    @include keyframes(vibrate) {
+        0% {
+            @include transform(translate(0));
+        }
+        20% {
+            @include transform(translate(-2px, 2px));
+        }
+        40% {
+            @include transform(translate(-2px, -2px));
+        }
+        60% {
+            @include transform(translate(2px, 2px));
+        }
+        80% {
+            @include transform(translate(2px, -2px));
+        }
+        100% {
+            @include transform(translate(0));
+        }
+    }
+}
+
+.animate-fade-in {
+    @include animation(fade-in, 0.5s, ease-in);
+    @include animation-fill-mode(forwards);
+    @include keyframes(fade-in) {
+        0% {
+            opacity: 0;
+            visibility: hidden;
+        }
+        100% {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.animate-fade-out {
+    @include animation(fade-out, 0.5s, ease-out);
+    @include animation-fill-mode(forwards);
+    @include keyframes(fade-out) {
+        0% {
+            visibility: visible;
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}

@@ -1,0 +1,295 @@
+.cursor {
+    position: absolute;
+    @include border-radius(50%);
+    @include transform(translate(-50%, -50%));
+    z-index: 100;
+    &:nth-of-type(1) {
+        width: 7px;
+        height: 7px;
+        background: $gray;
+    }
+    &:nth-of-type(2) {
+        width: 25px;
+        height: 25px;
+        border:1px solid $gray;
+    }
+}
+
+.page-loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: $black-blue;
+    .page-loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        box-shadow: inset 0 0 0 16px rgba($dark, 0.1);
+        @include border-radius(50%);
+        @include transform(translate(-50%, -50%));
+    }
+    .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 115px;
+        height: 115px;
+        background-image: url("../img/min/logo.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include transform(translate(-50%, -50%));
+    }
+    .counter {
+        position: absolute;
+        left: 50%;
+        bottom: 40px;
+        @include transform(translateX(-50%));
+        background: $pink;
+        background: linear-gradient(to right, $violet, $pink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: $white;
+        .loader {
+            position: relative;
+            width: 75px;
+            height: 100px;
+            &__bar {
+                position: absolute;
+                bottom: 0;
+                width: 10px;
+                height: 50%;
+                background: $pink;
+                background: linear-gradient($pink, $violet);
+                transform-origin: center bottom;
+                box-shadow: 1px 1px 0 rgba($dark, 0.2);
+                @for $i from 1 through 5 { 
+                    &:nth-child(#{$i}) {
+                        left: ($i - 1) * 15px;
+                        transform: scale(1,$i*.2);
+                        animation: barUp#{$i} 4s infinite;
+                    }
+                }
+            }
+            &__ball {
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                width: 10px;
+                height: 10px;
+                background: $pink;
+                border-radius: 50%;
+                animation: ball 4s infinite;
+            }
+        }
+        @keyframes ball {
+            0% { @include transform(translate(0, 0)) }
+            5% { @include transform(translate(8px, -14px)) }
+            10% { @include transform(translate(15px, -10px)) }
+            17% { @include transform(translate(23px, -24px)) }
+            20% { @include transform(translate(30px, -20px)) }
+            27% { @include transform(translate(38px, -34px)) }
+            30% { @include transform(translate(45px, -30px)) }
+            37% { @include transform(translate(53px, -44px)) }
+            40% { @include transform(translate(60px, -40px)) }
+            50% { @include transform(translate(60px, 0)) }
+            57% { @include transform(translate(53px, -14px)) }
+            60% { @include transform(translate(45px, -10px)) }
+            67% { @include transform(translate(37px, -24px)) }
+            70% { @include transform(translate(30px, -20px)) }
+            77% { @include transform(translate(22px, -34px)) }
+            80% { @include transform(translate(15px, -30px)) }
+            87% { @include transform(translate(7px, -44px)) }
+            90% { @include transform(translate(0, -40px)) }
+            100% { @include transform(translate(0, 0)) }
+        }
+        @keyframes barUp1 { 
+            0% { @include transform(scale(1, 0.2)) }
+            40% { @include transform(scale(1, 0.2)) }
+            50% { @include transform(scale(1, 1)) }
+            90% { @include transform(scale(1, 1)) }
+            100% { @include transform(scale(1, 0.2)) }
+        }
+        @keyframes barUp2 { 
+            0% { @include transform(scale(1, 0.4)) }
+            40% { @include transform(scale(1, 0.4)) }
+            50% { @include transform(scale(1, 0.8)) }
+            90% { @include transform(scale(1, 0.8)) }
+            100% { @include transform(scale(1, 0.4)) }
+        }
+        @keyframes barUp3 { 
+            0% { @include transform(scale(1, 0.6)) }
+            100% { @include transform(scale(1, 0.6)) }
+        }
+        @keyframes barUp4 { 
+            0% { @include transform(scale(1, 0.8)) }
+            40% { @include transform(scale(1, 0.8)) }
+            50% { @include transform(scale(1, 0.4)) }
+            90% { @include transform(scale(1, 0.4)) }
+            100% { @include transform(scale(1, 0.8)) }
+        }
+        @keyframes barUp5 { 
+            0% { @include transform(scale(1, 1)) }
+            40% { @include transform(scale(1, 1)) }
+            50% { @include transform(scale(1, 0.2)) }
+            90% { @include transform(scale(1, 0.2)) }
+            100% { @include transform(scale(1, 1)) }
+        }
+    }
+}
+
+.nano {
+    width: 100%; 
+    height: 100vh; 
+    .nano-pane {
+        z-index: 96;
+        padding-top: 5px;
+        background: rgba($black, 0.35); 
+    }
+    .nano-slider {
+        background: $pink;
+    }
+}
+
+.custom-btn-solid {
+    padding: 0.5rem 2.5rem;
+    background: $pink;
+    border-color: $pink;
+    font-family: $raleway;
+    color: $white !important;
+    @include border-radius(0);
+    @include transition(all 0.2s linear);
+    &:hover {
+        background: $violet;
+        border-color: $violet;
+        box-shadow: 0 0.5rem 0.5rem -0.5rem rgba($black, 0.5);
+    }
+    &:active, &:focus {
+        background: $violet !important;
+        border-color: $violet !important;
+        box-shadow: 0 0 0 0.2rem $violet;
+    }
+}
+
+.custom-btn-outline {
+    padding: 0.5rem 2.5rem;
+    background: transparent;
+    border-color: $pink;
+    font-family: $raleway;
+    color: $pink;
+    @include border-radius(0);
+    @include transition(all 0.2s linear);
+    &:hover {
+        box-shadow: 0 0.5rem 0.5rem -0.5rem rgba($black, 0.5);
+    }
+    &:active, &:focus {
+        background: $dark-pink !important;
+        border-color: $dark-pink !important;
+        box-shadow: 0 0 0 0.2rem $dark-pink;
+    }
+}
+
+.input-group {
+    .input-group-prepend .input-group-text {
+        background: $pink;
+        border-color: $pink;
+        font-family: $raleway;
+        color: $white;
+        @include border-radius(0);
+    }
+    .custom-select {
+        border-color: $pink;
+        color: $pink;
+        @include border-radius(0);
+        option {
+            color: $black;
+        }
+    }
+}
+
+.modal {
+    .modal-title {
+        font-family: $raleway;
+        font-weight: 700;
+        color: $pink;
+    }
+    .modal-body p {
+        font-size: 1.2rem;
+    }
+}
+
+.hvr-underline-from-center::before {
+    background: $pink;
+    height: 5px;
+}
+
+.hvr-radial-out::before {
+    background: $violet;
+}
+
+.hvr-sweep-to-right:before {
+    background: $pink;
+}
+
+.particles-js {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient($dark-blue 15%, $dark-violet 60%);
+    z-index: -6;
+}
+
+.svg-mouse-scrolling-icon {
+    .mouse {
+        max-width: 2.5rem;
+        width: 100%;
+        height: auto;
+        .scroll {
+            @include animation(scroll, 1.5s, cubic-bezier(0.650, -0.550, 0.250, 1.500), infinite);
+            transform-origin: 50% 20.5px;
+            will-change: transform, opacity;
+            opacity: 1;
+            @include keyframes(scroll) {
+                0%, 20% {
+                    @include transform(translateY(0) scaleY(1));
+                }
+                100% {
+                    @include transform(translateY(36px) scaleY(2));
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+.grid-container {
+    width: 100%;
+    margin: 0 auto;
+    &.img-unloaded {
+        opacity: 0;
+    }
+    .grid-item {
+        margin-bottom: 20px;
+        display: block;
+        float: left;
+        opacity: 0;
+        visibility: hidden;
+        img {
+            display: block;
+            max-width: 100%;
+        }
+    }
+    .grid-item, .grid-col-sizer {
+        width: 24.25%;
+    }
+    .grid-gutter-sizer { 
+        width: 1%; 
+    }
+}
