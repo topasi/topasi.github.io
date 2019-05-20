@@ -1,3 +1,16 @@
+@supports (not (background-clip: text)) or (not (-webkit-text-fill-color: transparent)) {
+    .title-firstname {
+        background: none !important;
+        color: $pink;
+    }
+}
+@supports not (clip-path: polygon(0 0, 50% 100px, 100% 0, 100% calc(100% - 100px), 50% 100%, 0 calc(100% - 100px))) {
+    .testimonals-container {
+        margin-top: 0 !important;
+        padding: 20px 0 60px !important;
+    }
+}
+
 .main-container { 
     .title-container {
         h1.text {
@@ -32,9 +45,10 @@
 
 .header-container {
     position: absolute;
-    top: 10px;
+    top: 0;
     width: 100%;
-    z-index: 2;
+    padding: 0.5rem 0;
+    z-index: 90;
     &.animate-header {
         @include transform(translateY(-100%));
         @include animation(header-slide-in-bottom, 0.4s, cubic-bezier(0.250, 0.460, 0.450, 0.940));
@@ -50,77 +64,12 @@
             }
         }
     }
-    .hamburger-container {
-        position: absolute;
-        top: 0;
-        right: -105px;
-        padding: 20px;
-        display: none;
-        background: transparent;
-        border: none;
-        outline: none;
-        @include transition(all 0.4s ease-in-out);
-        .menu-bar {
-            width: 65px;
-            height: 5px;
-            margin: 12px 0;
-            display: block;
-            background: $white;
-            @include border-radius(5px);
-            @include transition(all 0.2s ease-in-out);
-            &:nth-of-type(1) {
-                margin-top: 0;
-             }
-            &:nth-of-type(3) {
-                margin-bottom: 0;
-            }
-        }
-        &.is-pink {
-            background: $pink;
-        }
-        &.is-violet {
-            background: $violet;
-        }
-        &:hover {
-            .menu-bar:nth-of-type(1) {
-                @include transform(translateY(2px) rotate(-4deg));
-             }
-            .menu-bar:nth-of-type(3) {
-                @include transform(translateY(-2px) rotate(4deg));
-            }
-        }
-    }
     .brand-container {
         float: left;
-        margin-top: 12px;
+        margin-top: 1rem;
         .brand {
             width: 85px;
             vertical-align: middle;
-        }
-        .owner-container {
-            margin-left: 10px;
-            display: none;
-            vertical-align: middle;
-            font-family: $raleway;
-            font-weight: 700;
-            color: $white;
-            text-transform: uppercase;
-            .name {
-                margin-bottom: 0;
-                font-size: 2rem;
-                line-height: 2.5rem;
-                letter-spacing: 0.05rem;
-                background: $pink;
-                background: linear-gradient(to right, $violet, $pink);
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-            .position {
-                margin-bottom: 0;
-                font-size: 0.85rem;
-                letter-spacing: 0.13rem;
-                text-indent: 1px;
-            }
         }
     }
     .nav-container {
@@ -164,10 +113,12 @@
 }
 
 .home-container {
+    position: relative;
     height: calc(100% + 100px);
+    min-height: $sm-devices;
     &::before {
         position: absolute;
-        bottom: -100px;
+        bottom: 0;
         width: 100%;
         height: 100px;
         display: block;
@@ -215,7 +166,6 @@
                 font-size: 10rem;
                 font-weight: 700;
                 line-height: 10rem;
-                background: $pink;
                 background: linear-gradient(to right, $violet, $pink);
                 background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -242,7 +192,7 @@
     .svg-mouse-scrolling-icon {
         position: absolute;
         left: 50%;
-        bottom: 40px;
+        bottom: 140px;
         z-index: 3;
         @include transform(translate(-50%, 0));
         &.animate-svg-mouse {
@@ -264,7 +214,7 @@
     .cloud-left {
         position: absolute;
         left: 0;
-        bottom: 25px;
+        bottom: 100px;
         width: 50%;
         height: 250px;
         background-image: url("../img/min/cloud-small.png");
@@ -290,7 +240,7 @@
     .cloud-right {
         position: absolute;
         right: -100px;
-        bottom: 25px;
+        bottom: 100px;
         width: 50%;
         height: 250px;
         background-image: url("../img/min/cloud-small.png");
@@ -315,13 +265,14 @@
     }
     .cloud-big {
         position: absolute;
-        bottom: -125px;
+        bottom: 0;
         width: 100%;
         height: 100%;
         z-index: -4;
         background-image: url("../img/min/cloud-big.png");
         background-size: contain;
-        background-position: 0 bottom;
+        background-position-x: 0;
+        background-position-y: 110%;
         background-repeat: repeat-x;
         @include transform(translateY(0));
         @include animation(move-cloud, 200s, cubic-bezier(0.250, 0.460, 0.450, 0.940), infinite);
@@ -336,13 +287,13 @@
     }
     .mountain {
         position: absolute;
-        bottom: -100px;
+        bottom: 0;
         width: 100%;
         height: 100%;
         background-image: url("../img/min/mountains.png");
         background-repeat: no-repeat;
         background-position: center bottom;
-        background-size: contain;
+        background-size: $xx-devices auto;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 50% 100%, 0 calc(100% - 100px));
         backface-visibility: hidden;
         z-index: -1;
@@ -350,7 +301,7 @@
     .greetings {
         position: absolute;
         left: 50%;
-        bottom: 125px;
+        bottom: 225px;
         width: 90%;
         height: 100%;
         background-image: url("../img/min/hello!.png");
@@ -431,7 +382,8 @@
             box-shadow: 0 5px 5px 0 rgba($gray, 0.5), 0 0 0 1px $gray;
             @include border-radius(25px);
             .iphone-container {
-                margin-top: -65px;
+                max-width: $xs-devices;
+                margin: -65px auto 0;
                 opacity: 0;
                 @include transform(translateY(25%));
                 @include animation-delay(0.2s);
@@ -517,7 +469,7 @@
                     }
                 }
                 &.right ul {
-                    margin-right: 75px;
+                    margin-right: 70px;
                     border-right: 3px solid $pink;
                     @include border-radius(10px 0 0 10px);
                     > li::before {
@@ -584,14 +536,14 @@
         @include transform(translateX(-1000px));
         .chart-container {
             position: absolute;
-            top: 16px;
+            top: 44%;
             left: 50%;
             width: 384px;
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
             align-items: center;
-            @include transform(translateX(-50%));
+            @include transform(translate(-50%, -50%));
             .chart {
                 width: 80px;
                 margin: 8px;
@@ -767,11 +719,6 @@
                 overflow: hidden;
                 box-shadow: 0 0 10px 0 $gray;
                 opacity: 0;
-                @for $i from 1 through 12 {
-                    &:nth-of-type(#{$i}) {
-                        @include animation-delay(#{$i * 0.1 / 2}s);
-                    }
-                }
                 &::after {
                     position: absolute;
                     top: 0;
@@ -949,6 +896,10 @@
             display: inline-block;
             margin: 0 20px;
             padding: 6px 0;
+            &.separator {
+                width: 100%;
+                display: none;
+            }
             > a {
                 width: 65px;
                 height: 65px;

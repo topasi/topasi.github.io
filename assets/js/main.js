@@ -3,17 +3,6 @@ $(function() {
     // page on load
     window.onload = page_load;
 
-    // window load, resize and scroll function
-    $(window).add(".main-container").on("load resize", function() {
-        var screen_width = $(this).width();
-        //screen_height = $(this).height();
-        if (screen_width > 1680) {
-            $(".main-container").addClass("is-narrow");
-        } else {
-            $(".main-container").removeClass("is-narrow");
-        }
-    });
-
     // initialize nano scroller
     $(".nano").nanoScroller().find(".nano-slider").css({
         "background" : colors.pink,
@@ -22,9 +11,9 @@ $(function() {
 
     /*
     var scene = new ScrollMagic.Scene({
-        triggerElement: ".avatar",  
-        triggerHook: 0.9,           // this fires first 0.9 from bottom thats 90% height of viewport from top
-        duration: "90%",            // this fires second when elements leaves the viewport at 90% which means before reaching 100% height of viewport from top
+        triggerElement: ".avatar",  // 
+        triggerHook: 0.9,           // fires first 0.9 from bottom thats 90% height of viewport from top
+        duration: "90%",            // fires second when elements leaves the viewport at 90% which means before reaching 100% height of viewport from top
         reverse: false,
     })
     .setClassToggle(".avatar", "fade-in")
@@ -78,19 +67,20 @@ $(function() {
     });
 
     // pinned sections on scroll
-    var about_pinned = [
-        ".timeline-container",
-        ".dots"
-    ];
-    $.each(about_pinned, function(key, el) {
-        var about_pinned_scene = new ScrollMagic.Scene({
-            triggerElement: ".about-start-pinned",
-            triggerHook: 0,      
-            duration: "100%"        
-        })
-        .setPin(this, { pushFollowers: false })
-        .addTo(controller); 
-    });
+    var about_timeline_pinned_scene = new ScrollMagic.Scene({
+        triggerElement: ".about-start-pinned",
+        triggerHook: 0,      
+        duration: "100%"        
+    })
+    .setPin(".timeline-container", { pushFollowers: false })
+    .addTo(controller); 
+    var about_dots_pinned_scene = new ScrollMagic.Scene({
+        triggerElement: ".about-start-pinned",
+        triggerHook: 0,      
+        duration: "100%"        
+    })
+    .setPin(".dots", { pushFollowers: false })
+    .addTo(controller); 
     var skills_pinned_scene = new ScrollMagic.Scene({
         triggerElement: ".pinned-proficiency-graphics",
         triggerHook: 0,      
@@ -244,6 +234,14 @@ $(function() {
         $grid.removeClass("img-unloaded");
         $grid.isotope("option", { itemSelector: ".grid-item" });
         $grid.isotope("appended", $items);
+
+        // initialize tilt for grid items
+        $items.tilt({
+            maxTilt: 10,
+            glare: true,
+            maxGlare: 0.4
+        }).addClass("animate-fade-in");
+
     });
 
     // append items function
@@ -265,22 +263,15 @@ $(function() {
         }
         
         $grid_items = $(get_items_html.join(""));
-
         $grid_items.imagesLoaded(function() {
-
             $grid.append($grid_items);
-
-            // initialize tilt for grid items
             $grid_items.tilt({
                 maxTilt: 10,
                 glare: true,
                 maxGlare: 0.4
             });
-
             $grid.isotope("appended", $grid_items);
-
             $hide_element.removeClass("d-none");
-
         }).addClass("animate-fade-in");
    
     };
@@ -291,8 +282,10 @@ $(function() {
         all_items_href[index] = $items.eq(index).attr("href");
         all_items_html[index] = $items.eq(index).html();
         all_items[index] = "<a class='" + all_items_class[index] + "' data-fancybox='grid-item' href='" + all_items_href[index] + "'>" + all_items_html[index] + "</a>";
-        reveal_items.push(all_items[index]);
-        $items.eq(index).remove();
+        if (index >= visible_items) {
+            reveal_items.push(all_items[index]);
+            $items.eq(index).remove();
+        }
     });
 
     // filter option function
@@ -315,9 +308,6 @@ $(function() {
         e.preventDefault();
         append_items(reveal_items);
     });
-
-    // run functions
-    append_items(reveal_items);
 
     // form textboxes animate when focus
     $("#txt-name, #txt-email, #txtarea-msg").focus(function() {
@@ -346,6 +336,36 @@ $(function() {
             $(".modal-body p").html("The website dont exist anymore. Thank you.");
             $("#modal-dialog-box").modal("toggle");
         }
+    });
+
+    // window load, resize and scroll function
+    $(window).add(".main-container").on("load resize", function() {
+
+        var screen_width = $(this).width(),
+            screen_height = $(this).height();
+
+        if (screen_width > screen_sizes.xx_devices) {
+            var bgPosY = screen_width - screen_sizes.xx_devices;
+            $(".mountain").css({
+                "background-position" : "center calc(100% + " + bgPosY / 6 + "px)"
+            });
+            $(".cloud-big").css({
+                "background-position-y" : "calc(100% + " + bgPosY / 3.5 + "px)"
+            });
+        }
+
+        if (screen_width <= screen_sizes.xl_devices || screen_height <= screen_sizes.sm_devices) {
+            about_timeline_pinned_scene.removePin(true);
+            about_dots_pinned_scene.removePin(true);
+            skills_pinned_scene.removePin(true);
+            portfolio_pinned_scene.removePin(true);
+        } else {
+            about_timeline_pinned_scene.setPin(".timeline-container", { pushFollowers: false }).addTo(controller);
+            about_dots_pinned_scene.setPin(".dots", { pushFollowers: false }).addTo(controller);
+            skills_pinned_scene.setPin(".pinned-proficiency-graphics", { pushFollowers: false }).addTo(controller);
+            portfolio_pinned_scene.setPin(".web-container", { pushFollowers: false }).addTo(controller);
+        }
+
     });
 
 });

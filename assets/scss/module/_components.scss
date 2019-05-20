@@ -177,24 +177,6 @@
     }
 }
 
-.custom-btn-outline {
-    padding: 0.5rem 2.5rem;
-    background: transparent;
-    border-color: $pink;
-    font-family: $raleway;
-    color: $pink;
-    @include border-radius(0);
-    @include transition(all 0.2s linear);
-    &:hover {
-        box-shadow: 0 0.5rem 0.5rem -0.5rem rgba($black, 0.5);
-    }
-    &:active, &:focus {
-        background: $dark-pink !important;
-        border-color: $dark-pink !important;
-        box-shadow: 0 0 0 0.2rem $dark-pink;
-    }
-}
-
 .input-group {
     .input-group-prepend .input-group-text {
         background: $pink;
@@ -276,7 +258,7 @@
         opacity: 0;
     }
     .grid-item {
-        margin-bottom: 20px;
+        margin-bottom: 1%;
         display: block;
         float: left;
         opacity: 0;
@@ -287,7 +269,7 @@
         }
     }
     .grid-item, .grid-col-sizer {
-        width: 24.25%;
+        width: calc(25% - 1%);
     }
     .grid-gutter-sizer { 
         width: 1%; 

@@ -7,7 +7,6 @@
 @import "layouts/_content.scss";
 @import "layouts/_responsive.scss";
 
-
 .slider-text-revealed {
     position: relative;
     display: block;
@@ -21,11 +20,6 @@
     .animation-delay-#{$i} {
         @include animation-delay($i * 0.15s);
     }
-}
-
-.animate {
-    visibility: hidden;
-    opacity: 0;
 }
 
 .animate-play {

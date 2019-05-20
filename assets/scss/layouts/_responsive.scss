@@ -1,34 +1,25 @@
-.main-container.is-narrow {
+@include screen-width($xl-devices) {
     .cloud-big {
-        bottom: -235px;
-    }
-    .mountain {
-        background-position: center 115%;
+        background-position-y: 95% !important;
     }
     .dots {
-        @include transform(translateY(15%));
+        width: 1400px;
+        left: 50% !important;
+        @include transform(translateX(-50%));
     }
     .model {
-        background-size: auto 90% !important;
+        background-size: 400px auto !important;
+        background-position: center top !important;
+    }
+    .timeline-wrapper {
+        padding-bottom: 40px;
+    }
+    .chart-container {
+        @include transform(translate(-50%, -50%) scale(0.8) !important);
     }
 }
 
-@include screen-height($md-devices) {
-    .page-loader-container {
-        .page-loader {
-            width: 175px !important;
-            height: 175px !important;
-        }
-        .logo {
-            width: 100px !important;
-            height: 100px !important;
-        }
-    }
-    .brand-container {
-        .brand {
-            width: 75px !important;
-        }
-    }
+@include screen-width($lg-devices) {
     .nav-container {
         .nav-wrapper li {
             a {
@@ -63,25 +54,271 @@
         }
     }
     .cloud-left, .cloud-right {
-        bottom: 0 !important;
+        bottom: 90px !important;
     }
-}
-
-@include screen($xx-devices) {
-
-}
-
-@include screen($xl-devices) {
-    .cloud-left, .cloud-right {
-        bottom: -25px !important;
+    .cloud-big {
+        background-position-y: 85% !important;
     }
     .greetings {
-        bottom: 100px !important;
+       bottom: 235px !important;
+    }
+    .timeline {
+        margin-top: 0 !important;
+        &.right ul {
+            margin-right: 0 !important;
+            margin-left: 70px;
+            border-right: 1px solid $gray !important;
+            border-left: 3px solid $pink !important;
+            @include border-radius(0 10px 10px 0 !important);
+            > li::before {
+                left: -95px;
+            }
+            > li::after {
+                left: -2.8rem;
+            } 
+        }
+    }
+    .proficiency-container {
+        margin-top: 20px !important;
+        text-align: center;
+    }
+    .chart-container {
+        @include transform(translate(-50%, -50%) scale(1.2) !important);
+    }
+    .web-wrapper {
+        padding: 15px;
+    }
+    .grid-item, .grid-col-sizer {
+        width: calc(33.33% - 1%) !important;
     }
 }
 
-@include screen($lg-devices) {
+@include screen-width($md-devices) {
+    .container {
+        max-width: none;
+    }
+    .header-container {
+        padding: 0;
+        max-height: calc(85px + 2rem);
+        overflow: hidden;
+        @include transition(all 0.2s linear);
+    }
+    .brand-container {
+        float: none !important;
+        .brand {
+            width: 75px !important;
+        }
+    }
+    .nav-container {
+        float: none !important;
+        margin-top: 1.25rem;
+        .nav-wrapper {
+            display: block !important;
+            > li {
+                display: block !important;
+                a {
+                    width: 100%;
+                    margin-left: 0 !important;
+                    padding: 2rem 0 !important;
+                    text-align: center;
+                }
+                &:last-child a {
+                    padding: 2rem 0 !important;
+                    box-shadow: none !important;
+                    @include border-radius(0 !important);
+                    &.hvr-underline-from-center::before {
+                        background: $pink !important;
+                    }
+                    &:hover {
+                        background: none !important;
+                        color: $pink !important;
+                    }
+                }
+            }
+        }
+    }
+    .hamburger-container {
+        display: block !important;
+    }
+    .intro-text-container {
+        .title-jap {
+            font-size: 2rem !important;
+        }
+        .title-firstname {
+            font-size: 7rem !important;
+            line-height: 7rem !important;
+        }
+        .title-surname {
+            font-size: 5rem !important;
+            line-height: 5rem !important;
+        }
+        .title-dream {
+            font-size: 1rem !important;
+            letter-spacing: 0.45rem !important;
+        }
+    }
+    .cloud-left, .cloud-right {
+       bottom: 75px !important;
+    }
+    .cloud-big {
+        background-position-y: 80% !important;
+    }
+    .dots {
+        opacity: 0;
+    }
+    .chart-container {
+        @include transform(translate(-50%, -50%) scale(1) !important);
+    }
+    .grid-item, .grid-col-sizer {
+        width: calc(50% - 1%) !important;
+    }
+}
+
+@include screen-width($sm-devices) {
+    .intro-text-container {
+        .title-jap {
+            font-size: 1.8rem !important;
+            letter-spacing: 0.4rem !important;
+            text-shadow: 0 5px 10px rgba($black, 0.25) !important;
+        }
+        .title-firstname {
+            font-size: 6rem !important;
+            line-height: 6rem !important;
+        }
+        .title-surname {
+            font-size: 4rem !important;
+            line-height: 4rem !important;
+            letter-spacing: 1.35rem !important;
+            text-shadow: 0 5px 10px rgba($black, 0.25) !important;
+        }
+        .title-dream {
+            font-size: 0.8rem !important;
+            letter-spacing: 0.4rem !important;
+            text-shadow: 0 5px 10px rgba($black, 0.25) !important;
+        }
+    }
+    .svg-mouse-scrolling-icon {
+        .mouse {
+            max-width: 2rem;
+        }
+    }
+    .cloud-left, .cloud-right {
+        bottom: 65px !important;
+    }
+    .cloud-big {
+        background-position-y: 75% !important;
+    }
+    .greetings {
+        bottom: 250px !important;
+    }
+    .chart-container {
+        @include transform(translate(-50%, -50%) scale(0.8) !important);
+    }
+    #btn-submit {
+        width: 100%;
+    }
+}
+
+@include screen-width($xs-devices) {
+    .cloud-left, .cloud-right {
+        bottom: 50px !important;
+    }
+    .cloud-big {
+        background-position-y: 73% !important;
+    }
+    .model {
+        background-size: 80% auto !important;
+    }
+    .chart-container {
+        @include transform(translate(-50%, -50%) scale(0.6) !important);
+    }
+    .grid-item, .grid-col-sizer {
+        width: 100% !important;
+    }
+    ul.social-media-wrapper {
+        text-align: center;
+        > li {
+            margin: 1rem 20px !important;
+            &.seperator {
+                display: block !important;
+            }
+        }
+        > li a {
+            width: 125px !important;
+            height: 125px !important;
+            font-size: 5rem !important;
+            line-height: 121px !important;
+        }
+    }
+}
+
+@include screen-min-width($xx-devices + 0.2) {
+    .cloud-left, .cloud-right {
+        bottom: 125px !important;
+    }
     .mountain {
-       background-size: 125% auto !important;
+        background-size: contain !important;
+    }
+    .dots {
+        @include transform(translateY(15%) !important);
+    }
+    .model {
+        background-size: auto 90% !important;
+    }
+}
+
+@include screen-height($md-devices) {
+    .page-loader-container {
+        .page-loader {
+            width: 175px !important;
+            height: 175px !important;
+        }
+        .logo {
+            width: 100px !important;
+            height: 100px !important;
+        }
+        .loader {
+            @include transform(scale(0.9));
+        }
+    }
+}
+
+@include screen-height($sm-devices) {
+    .page-loader-container {
+        .counter {
+            bottom: 20px !important
+        }
+    }
+    .intro-text-container {
+        .title-jap {
+            font-size: 1.8rem !important;
+            letter-spacing: 0.4rem !important;
+            text-shadow: 0 5px 10px rgba($black, 0.25) !important;
+        }
+        .title-firstname {
+            font-size: 6rem !important;
+            line-height: 6rem !important;
+        }
+        .title-surname {
+            font-size: 4rem !important;
+            line-height: 4rem !important;
+            letter-spacing: 1.35rem !important;
+            text-shadow: 0 5px 10px rgba($black, 0.25) !important;
+        }
+        .title-dream {
+            font-size: 0.8rem !important;
+            letter-spacing: 0.4rem !important;
+            text-shadow: 0 5px 10px rgba($black, 0.25) !important;
+        }
+    }
+    .svg-mouse-scrolling-icon {
+        bottom: 120px !important;
+        .mouse {
+            max-width: 1.75rem;
+        }
+    } 
+    .model {
+        background-size: 400px auto !important;
+        background-position: center top !important;
     }
 }

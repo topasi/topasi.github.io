@@ -5,6 +5,15 @@ var colors = {
     dark_blue   :   "#16263f",
 };
 
+var screen_sizes = {
+    xx_devices: 1366,
+    xl_devices: 1200,
+    lg_devices: 992,
+    md_devices: 768,
+    sm_devices: 576,
+    xs_devices: 479
+};
+
 // prevent default all <a> tag with onclick attribute
 $("a[onclick]").click(function(e) {
     e.preventDefault();

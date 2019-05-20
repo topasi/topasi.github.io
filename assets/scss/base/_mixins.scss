@@ -39,16 +39,14 @@
     }
 }
 
-@mixin screen($min-width) {
-    $max-width: null;
-    @if $min-width >= $xx-devices { $max-width: $xx-devices * 2; }
-    @else if $min-width >= $xl-devices { $max-width: $xx-devices - 0.1; }
-    @else if $min-width >= $lg-devices { $max-width: $xl-devices - 0.1; }
-    @else if $min-width >= $md-devices { $max-width: $lg-devices - 0.1; }
-    @else if $min-width >= $sm-devices { $max-width: $md-devices - 0.1; }
-    @else if $min-width >= $xs-devices { $max-width: $sm-devices - 0.1; }
-    @else { $max-width: $xs-devices; }
-    @media screen and (min-width: $min-width) and (max-width: $max-width) {
+@mixin screen-width($max-width) {
+    @media screen and (max-width: $max-width) {
+        @content;
+    }
+}
+
+@mixin screen-min-width($min-width) {
+    @media screen and (min-width: $min-width) {
         @content;
     }
 }
