@@ -15,6 +15,7 @@
             @include transform(translateY(-17px) rotate(45deg));
         }
     }
+    /*
     &:checked + .header-container .hamburger-container:hover .menu-bar {
         &:nth-of-type(1) {
             @include transform(translateX(-2px) translateY(15px) rotate(-41deg));
@@ -23,6 +24,7 @@
             @include transform(translateX(-2px) translateY(-15px) rotate(41deg));
         }
     }
+    */
 }
 
 #label-hamburger {
@@ -50,6 +52,7 @@
             margin-bottom: 0;
         }
     }
+    /*
     &:hover {
         .menu-bar:nth-of-type(1) {
             @include transform(translateY(2px) rotate(-4deg));
@@ -58,6 +61,7 @@
             @include transform(translateY(-2px) rotate(4deg));
         }
     }
+    */
 }
 
 .textbox-wrapper {
