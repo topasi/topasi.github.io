@@ -898,7 +898,7 @@
             padding: 6px 0;
             &.separator {
                 width: 100%;
-                display: none;
+                display: none !important;
             }
             > a {
                 width: 65px;
