@@ -1,17 +1,61 @@
 .cursor {
     position: absolute;
-    @include border-radius(50%);
-    @include transform(translate(-50%, -50%));
+    width: 20px;
+    height: 20px;
+    border: 1px solid $white;
+    box-sizing: content-box;
+    pointer-events: none;
     z-index: 100;
-    &:nth-of-type(1) {
-        width: 7px;
-        height: 7px;
-        background: $gray;
+    @include border-radius(50%);
+    @include transition(0.2s ease-out);
+    @include animation(cursor-main, 0.5s, linear, infinite);
+    @include animation-direction(alternate);
+    @include keyframes(cursor-main) {
+        from {
+            @include transform(scale(1));
+        }
+        to {
+            @include transform(scale(0.7));
+        }
     }
-    &:nth-of-type(2) {
-        width: 25px;
-        height: 25px;
-        border:1px solid $gray;
+    &::after {
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        width: 20px;
+        height: 20px;
+        opacity: 0.5;
+        content: "";
+        border: 8px solid $dark-gray;
+        box-sizing: content-box;
+        @include border-radius(50%);
+        @include animation(cursor-after, 0.5s, linear, infinite);
+        @include animation-direction(alternate);
+        @include keyframes(cursor-after) {
+            from {
+                @include transform(scale(1));
+            }
+            to {
+                @include transform(scale(0.4));
+            }
+        }
+    }
+    &.expand {
+        border: 1px solid $pink;
+        @include animation(cursor-expand, 0.5s, linear);
+        @include animation-fill-mode(forwards);
+        @include keyframes(cursor-expand) {     
+            0% {
+                @include transform(scale(1));
+            }
+            50% {
+                @include transform(scale(3));
+            }
+            100% {
+                @include transform(scale(1));
+                opacity: 0;
+            }
+        }   
     }
 }
 

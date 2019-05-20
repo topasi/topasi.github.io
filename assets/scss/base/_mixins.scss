@@ -29,6 +29,10 @@
     animation-fill-mode: $fill-mode;
 }
 
+@mixin animation-direction($direction) {
+    animation-direction: $direction;
+}
+
 @mixin animation-play-state($status) {
     animation-play-state: $status;
 }

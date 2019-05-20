@@ -29,10 +29,7 @@
     </script>
 </head>
 <body>     
-    <!--
     <div class="cursor"></div>
-    <div class="cursor"></div>
-    -->
     <div id="modal-dialog-box" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -552,35 +549,16 @@
     <script type="text/javascript" src="./assets/js/functions.js"></script>
     <script type="text/javascript" src="./assets/js/main.js"></script>  
     <script type="text/javascript">
-    
-    /*
-    var getPath = ['page'];
-
-    var infScroll = new InfiniteScroll( grid, {
-        path: function() {
-            return getPath[ this.loadCount ] + '.html';
-        },
-        append: '.grid__item',
-        outlayer: msnry,
-        status: '.page-load-status',
-        elementScroll: '.main-container',
-        history: false,
-        historyTitle: false
-    });
-
-        $(document).mousemove(function(e) {
-            $(".cursor").eq(0).css({
-                left: e.clientX,
-                top: e.clientY
-            });
-            setTimeout(function() {
-                $(".cursor").eq(1).css({
-                    left: e.clientX,
-                    top: e.clientY
-                });
-                }, 150);
-            })
-    */
+        const cursor = document.querySelector(".cursor");
+        document.addEventListener("mousemove", e => {
+            cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;");
+        });
+        document.addEventListener("click", () => {
+            cursor.classList.add("expand");
+            setTimeout(() => {
+                cursor.classList.remove("expand");
+            }, 500);
+        });
     </script>   
 </body>
 </html>
