@@ -27,7 +27,7 @@ function page_load() {
         trailWidth: 8,
         trailColor: "transparent",
         easing: "easeInOut",
-        duration: afterTime - beforeTime,
+        duration: (afterTime - beforeTime) / 2,
         text: {
             autoStyleContainer: false,
             style: null
